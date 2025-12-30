@@ -1,0 +1,44 @@
+name: Flask CI
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: rootpassword
+          MYSQL_DATABASE: smart_resume_db
+        ports:
+          - 3306:3306
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+        
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r smart_resume_analyzer/requirements.txt
+        pip install pytest pytest-flask pytest-mock
+        
+    - name: Run tests
+      env:
+        FLASK_CONFIG: testing
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        SQLALCHEMY_DATABASE_URI: sqlite:///:memory:
+      run: |
+        cd smart_resume_analyzer
+        pytest

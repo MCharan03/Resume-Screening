@@ -1,0 +1,20 @@
+2025-12-25 17:36:03,280 - sra_logger - INFO - Generating resume analysis.
+2025-12-25 17:36:03,280 - sra_logger - INFO - Successfully generated resume analysis.
+2025-12-25 17:36:03,282 - sra_logger - INFO - Generating resume analysis.
+2025-12-25 17:36:03,282 - sra_logger - INFO - Successfully generated resume analysis.
+2025-12-25 17:36:03,285 - sra_logger - INFO - Generating resume analysis.
+2025-12-25 17:36:03,285 - sra_logger - ERROR - Could not find or parse JSON object in the AI response for resume analysis.
+2025-12-25 17:36:04,486 - sra_logger - ERROR - Error generating AI analysis: expected string or bytes-like object, got 'MagicMock'
+2025-12-25 17:36:04,489 - sra_logger - INFO - Generating resume analysis.
+2025-12-25 17:36:04,489 - sra_logger - ERROR - Error generating AI analysis: API Error
+2025-12-25 17:36:04,492 - sra_logger - INFO - Generating resume analysis.
+2025-12-25 17:36:04,492 - sra_logger - INFO - Successfully generated resume analysis.
+2025-12-25 17:36:04,751 - sra_logger - INFO - Attempting to log in user: testuser
+2025-12-25 17:36:04,752 - sra_logger - INFO - User testuser found in DB. Verifying password.
+2025-12-25 17:36:04,993 - sra_logger - INFO - Attempting to log in user: testuser
+2025-12-25 17:36:04,993 - sra_logger - INFO - User testuser found in DB. Verifying password.
+2025-12-25 17:36:05,009 - sra_logger - INFO - Attempting to log in user: nonexistent
+2025-12-25 17:36:05,010 - sra_logger - WARNING - Failed login attempt for username: nonexistent - User not found.
+2025-12-25 17:36:05,018 - sra_logger - ERROR - Database connection error: Connection failed
+2025-12-25 17:36:05,021 - sra_logger - INFO - Successfully inserted data for user_id: 1
+2025-12-25 17:36:05,024 - sra_logger - ERROR - Error inserting data for user_id 1: Insertion failed
